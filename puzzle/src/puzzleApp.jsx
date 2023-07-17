@@ -12,7 +12,7 @@ import "./styles/navbar.css"
 import "./styles/gameBoard.css"
 import Navbar from "./components/navbar"
 import { getLocalStorageUser } from "./utils/utils"
-import { Route, Routes, useNavigate } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import GameBoard from "./components/gameBoard"
 import NotFound from "./components/notFound"
 
@@ -26,8 +26,6 @@ export function PuzzleApp() {
     const loggedInUser = getLocalStorageUser()
     setAuthenticated(loggedInUser)
   }, [])
-
-  const navigate = useNavigate()
 
   const toggleForm = (formName) => {
     setCurrentForm(formName)
@@ -52,8 +50,9 @@ export function PuzzleApp() {
 
   const redirectIfNotAuthenticated = () => {
     const path = window.location.pathname
-    if (authenticated == null && path != "/login" && path != "/")
-      window.location.href = "/"
+    if (authenticated == null && 
+      path != "/login" && path != "/" && path != "/404")
+      window.location.href = "/404"
   }
 
   const redirectIfReloadingWhileGame = () => {
@@ -140,6 +139,7 @@ export function PuzzleApp() {
                 </div>
               }
             />
+            <Route path="/404" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         )}

@@ -226,7 +226,7 @@ const MyPuzzles = (props) => {
 
   if (loading != false) return getPageLoadingSpinner()
 
-  const { startNum, endNum } = getPageRange(currentPage, length)
+  const { startNum, endNum } = getPageRange(currentPage, data.length)
   const rows = getTableRows()
 
   return (
