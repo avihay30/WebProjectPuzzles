@@ -72,7 +72,6 @@ export function PuzzleApp() {
     )
   }
 
-  redirectIfNotAuthenticated()
   redirectIfReloadingWhileGame()
 
   return (
@@ -81,7 +80,7 @@ export function PuzzleApp() {
       <>
         {ifWaitWhileReloading() ? (
           <div className="homePage"></div>
-        ) : (
+        ) : redirectIfNotAuthenticated() ? <></> : (
           <Routes>
             <Route
               path="/"
