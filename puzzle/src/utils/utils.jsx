@@ -1,4 +1,4 @@
-export const SERVER_URL = "http://localhost:3000"
+export const SERVER_URL = ""
 
 export const getLocalStorageUser = () => {
   let loggedInUser = localStorage.getItem("user")
