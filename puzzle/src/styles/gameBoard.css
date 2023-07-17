@@ -2,6 +2,10 @@ Game Board
 .jigsaw{
     text-align: center;
   }
+
+  .jigsaw-container {
+    overflow-x: auto;
+  }
   
   .jigsaw__solved-board{
     position: relative;

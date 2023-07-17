@@ -351,6 +351,7 @@ const GameBoard = (props) => {
           )}
 
           {/* Game board code */}
+          <div className="jigsaw-container max-w-screen-2xl">
           <div className="jigsaw flex items-center mt-20">
             {props.gameData.imageURL && (
               <ul
@@ -399,9 +400,9 @@ const GameBoard = (props) => {
               </ol>
             )}
           </div>
-
+          </div>
           {/* Buttons */}
-          <div className="my-5 flex justify-center">
+          <div className="my-5 ml-2 min-w-96 flex justify-center">
             <button
               className="flex-auto w-16 relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
               onClick={() => prepereGame(true)}
